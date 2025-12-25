@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Marketing Portfolio</title>
+  <meta name="description" content="Marketing portfolio of Your Name — growth, brand, and performance marketing case studies." />
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:#243042;
+      --accent:#60a5fa;
+      --accent2:#34d399;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1060px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,.25), transparent 60%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(52,211,153,.18), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 72px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 0 22px;
+    }
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none}
+    .dot{
+      width:14px;height:14px;border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(96,165,250,.08);
+    }
+    .brand strong{letter-spacing:.2px}
+    nav{display:flex;flex-wrap:wrap;gap:10px}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border:1px solid transparent;
+      border-radius:999px;
+      transition:.2s ease;
+    }
+    nav a:hover{color:var(--text);border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.03)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+      nav{justify-content:flex-end}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:28px}
+    .kicker{color:var(--muted);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+    h1{margin:10px 0 10px;font-size:clamp(2rem, 4vw, 3rem);line-height:1.05}
+    .sub{color:var(--muted);margin:0 0 18px;font-size:1.05rem}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border-radius:999px;
+      text-decoration:none;font-weight:650;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color:rgba(96,165,250,.45);
+      background:linear-gradient(135deg, rgba(96,165,250,.25), rgba(52,211,153,.18));
+    }
+    .pillRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .pill{
+      font-size:.9rem;color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.18);
+      padding:7px 10px;border-radius:999px;
+    }
+    .heroSide{padding:18px;display:flex;flex-direction:column;gap:12px}
+    .mini{
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.18);
+    }
+    .mini h3{margin:0 0 6px;font-size:1rem}
+    .mini p{margin:0;color:var(--muted);font-size:.95rem}
+    .grid3{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px}
+    @media (max-width: 860px){.grid3{grid-template-columns:1fr}}
+    section{margin-top:22px}
+    .sectionHead{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+      padding:0 4px;
+      margin:18px 0 10px;
+    }
+    .sectionHead h2{margin:0;font-size:1.25rem}
+    .sectionHead .hint{color:var(--muted);font-size:.95rem}
+    .cases{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px}
+    @media (max-width: 980px){.cases{grid-template-columns:1fr}}
+    .case{padding:18px}
+    .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 12px}
+    .tag{
+      font-size:.78rem;
+      color:rgba(229,231,235,.9);
+      border:1px solid rgba(255,255,255,.10);
+      padding:5px 8px;border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .metric{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;
+      padding-top:12px;border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted);font-size:.95rem;
+    }
+    .metric strong{color:var(--text)}
+    .case h3{margin:0 0 8px}
+    .case p{margin:0;color:var(--muted)}
+    .case a.more{display:inline-flex;margin-top:12px;text-decoration:none;color:var(--text);gap:8px}
+    .case a.more:hover{color:var(--accent)}
+    .twoCol{display:grid;grid-template-columns: 1fr 1fr;gap:14px}
+    @media (max-width: 900px){.twoCol{grid-template-columns:1fr}}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .list li{margin:8px 0}
+    .footer{
+      margin-top:26px;
+      padding:18px;
+      color:var(--muted);
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .small{font-size:.95rem;color:var(--muted)}
+    .line{height:1px;background:rgba(255,255,255,.08);margin:16px 0}
+    /* Simple smooth scrolling */
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="dot" aria-hidden="true"></span>
+        <strong>Your Name</strong>
+      </a>
+      <nav aria-label="Site">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card heroMain">
+        <div class="kicker">Marketing • Growth • Brand</div>
+        <h1>I help brands grow through clear positioning, smart campaigns, and measurable results.</h1>
+        <p class="sub">
+          I’m a <strong>Marketing Specialist</strong> focused on go-to-market, performance marketing, and lifecycle.
+          Here are a few projects with outcomes, plus what I can do for your team.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#work" aria-label="View case studies">View case studies →</a>
+          <a class="btn" href="mailto:you@example.com" aria-label="Email me">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+
+        <div class="pillRow" aria-label="Highlights">
+          <span class="pill">B2B & B2C</span>
+          <span class="pill">Paid Social / Search</span>
+          <span class="pill">Email & CRM</span>
+          <span class="pill">Content Strategy</span>
+          <span class="pill">Experimentation</span>
+          <span class="pill">Analytics</span>
+        </div>
+      </section>
+
+      <aside class="card heroSide" aria-label="Quick stats">
+        <div class="mini">
+          <h3>Signature strengths</h3>
+          <p>Strategy that turns into execution, and execution that turns into data-driven iteration.</p>
+        </div>
+        <div class="mini">
+          <h3>Tools</h3>
+          <p>GA4, Looker Studio, Meta Ads, Google Ads, HubSpot, Mailchimp, Excel/Sheets, Figma.</p>
+        </div>
+        <div class="mini">
+          <h3>Looking for</h3>
+          <p>Marketing roles in growth / lifecycle / brand. Remote or Amsterdam.</p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="work">
+      <div class="sectionHead">
+        <h2>Selected work</h2>
+        <div class="hint">Replace the examples with your real projects.</div>
+      </div>
+
+      <div class="cases">
+        <article class="card case">
+          <div class="tagRow">
+            <span class="tag">Performance</span><span class="tag">Paid Social</span><span class="tag">Landing Page</span>
+          </div>
+          <h3>Lead gen refresh for a SaaS product</h3>
+          <p>
+            Reworked targeting + creative angles and improved the landing page message match to lift conversion rate.
+          </p>
+          <div class="metric">
+            <div><strong>+28%</strong> CVR</div>
+            <div><strong>-19%</strong> CPL</div>
+            <div><strong>6</strong> experiments</div>
+          </div>
+          <a class="more" href="#" title="Add a longer case study page later">Read summary →</a>
+        </article>
+
+        <article class="card case">
+          <div class="tagRow">
+            <span class="tag">Lifecycle</span><span class="tag">Email</span><span class="tag">Segmentation</span>
+          </div>
+          <h3>Lifecycle program to reduce churn</h3>
+          <p>
+            Built onboarding + reactivation flows with segmentation and clearer value moments across the first 30 days.
+          </p>
+          <div class="metric">
+            <div><strong>+14%</strong> activation</div>
+            <div><strong>-9%</strong> churn</div>
+            <div><strong>12</strong> emails</div>
+          </div>
+          <a class="more" href="#">Read summary →</a>
+        </article>
+
+        <article class="card case">
+          <div class="tagRow">
+            <span class="tag">Brand</span><span class="tag">Content</span><span class="tag">GTM</span>
+          </div>
+          <h3>Mini GTM for a product launch</h3>
+          <p>
+            Defined positioning, created launch assets, and coordinated the release calendar across channels.
+          </p>
+          <div class="metric">
+            <div><strong>+38%</strong> traffic</div>
+            <div><strong>3</strong> channels</div>
+            <div><strong>2</strong> weeks</div>
+          </div>
+          <a class="more" href="#">Read summary →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="sectionHead">
+        <h2>Skills & services</h2>
+        <div class="hint">What you can do for a team.</div>
+      </div>
+
+      <div class="twoCol">
+        <div class="card" style="padding:18px;">
+          <h3 style="margin:0 0 8px;">Growth & performance</h3>
+          <ul class="list">
+            <li>Campaign strategy, messaging, and creative testing</li>
+            <li>Paid social/search basics + landing page optimization</li>
+            <li>A/B testing, experiment planning, and learnings</li>
+            <li>Reporting dashboards and weekly performance narratives</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3 style="margin:0 0 8px;">Brand & lifecycle</h3>
+          <ul class="list">
+            <li>Positioning, value props, and audience research</li>
+            <li>Email journeys: onboarding, activation, winback</li>
+            <li>Content strategy and editorial planning</li>
+            <li>Cross-functional launch coordination</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sectionHead">
+        <h2>About</h2>
+        <div class="hint">Short and human.</div>
+      </div>
+
+      <div class="card" style="padding:18px;">
+        <p class="small" style="margin:0;">
+          Hi — I’m <strong>Your Name</strong>. I’ve worked on marketing for <strong>[industry / company type]</strong>,
+          focusing on turning customer insights into campaigns that perform. I like clean messaging, fast iteration,
+          and reporting that tells a clear story.
+        </p>
+        <div class="line"></div>
+        <p class="small" style="margin:0;">
+          Outside work: <em>[something personal — e.g., running, photography, espresso, travel]</em>.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <div class="hint">Make it easy to reach you.</div>
+      </div>
+
+      <div class="grid3">
+        <div class="card" style="padding:18px;">
+          <h3 style="margin:0 0 6px;">Email</h3>
+          <p class="small" style="margin:0;"><a href="mailto:you@example.com">you@example.com</a></p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3 style="margin:0 0 6px;">LinkedIn</h3>
+          <p class="small" style="margin:0;"><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">linkedin.com/in/your-handle</a></p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3 style="margin:0 0 6px;">Resume</h3>
+          <p class="small" style="margin:0;"><a href="#" title="Upload a PDF named resume.pdf in your repo">Add resume.pdf</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="y"></span> Your Name • Built on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    // Update footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
